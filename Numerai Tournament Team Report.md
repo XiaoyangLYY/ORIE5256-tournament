@@ -28,9 +28,9 @@ We used a chronological split inspired by López de Prado’s *Advances in Finan
 
 For each date, we convert average prediction ranks to percentiles using (rank − 0.5) / number of stocks, then Gaussianize them. CORR is the Pearson correlation after applying a signed 1.5 power to those values and the centered targets.
 
-```latex
+$$
 \mathrm{CORR}_t = \rho\left( \operatorname{sign}(g_t)\,|g_t|^{1.5},\ \operatorname{sign}(y_t - \bar y_t)\,|y_t - \bar y_t|^{1.5} \right), \quad g_t = \Phi^{-1}\!\left(\frac{\operatorname{rank}_{\mathrm{avg}}(\hat y_t)-0.5}{n_t}\right)
-```
+$$
 
 ## Experiments and validation results
 
