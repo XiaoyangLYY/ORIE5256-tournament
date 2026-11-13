@@ -49,7 +49,7 @@ E1–E3 were compared on the model-selection validation period (March 2019 to Au
 - **Capacity (E1 → E2)** produced the largest increase in mean CORR. E2 jointly expanded the feature set, increased the tree count and lowered the learning rate.
 - **Auxiliary targets (E2 → E3)** lowered both mean CORR and mean NCORR. The notebook selects `target_raw_return_20` and `target_factor_neutral_20` with the available v6.0 metadata. The shorter target horizon is one possible explanation, and the experiment does not isolate its effect.
 
-&#91;Add the cumulative CORR and NCORR chart from the notebook here.\]
+<img width="768" height="262" alt="image" src="https://github.com/user-attachments/assets/bcc24005-71f5-45d3-bf95-9df5e1e9f6df" />
 
 ## Final model and live submission
 
@@ -60,9 +60,10 @@ We submitted E2, retrained on training plus validation data, as Numerai model **
 3. Tested the file in Colab on the current `live.parquet` before uploading.
 4. Uploaded it to Numerai. Numerai now loads it every round, predicts on that round's live features and submits the ranked predictions automatically.
 
-Numerai's first run (Python 3.13) loaded the 2026-11-11 live data, generated 7,113 predictions and uploaded them successfully (HTTP 204).
+Numerai's first run (Python 3.13) loaded the 2026-11-13 live data, generated 7,113 predictions and uploaded them successfully (HTTP 204).
 
-&#91;Add the screenshot of the successful live submission here.\]
+<img width="724" height="233" alt="image" src="https://github.com/user-attachments/assets/f4ac40e1-42eb-49b9-bba7-de6824947e4c" />
+
 
 ## Discussion
 
@@ -75,7 +76,8 @@ Numerai's diagnostics page scores the submitted model at NCORR 0.1711 (Sharpe 7.
 
 The final fit used every fourth eligible validation date. The 60-business-day return windows on nearby dates can overlap those used for training, so the full diagnostic period provides no independent test. The CORR of 0.0243 refers to candidate E2 before retraining.
 
-&#91;Add the diagnostics screenshot here.\]
+<img width="767" height="281" alt="image" src="https://github.com/user-attachments/assets/552041e1-eb8e-4687-8be7-1088e9aa324e" />
+
 
 **Limitations**
 
